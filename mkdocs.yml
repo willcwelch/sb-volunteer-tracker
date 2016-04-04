@@ -1,0 +1,9 @@
+site_name: SBU Community Engagement Database
+pages:
+- Home: index.md
+- Design:
+  - Flowchart: flowchart.md
+  - Wireframes: wireframes.md
+  - Database: database.md
+  - Personas: personas.md
+- About: about.md
