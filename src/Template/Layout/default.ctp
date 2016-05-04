@@ -34,24 +34,25 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
     <?= $this->fetch('script') ?>
 </head>
 <body>
-    <nav class="top-bar expanded" data-topbar role="navigation">
-        <ul class="title-area large-3 medium-4 columns">
-            <li class="name">
-                <h1><a href=""><?= $this->fetch('title') ?></a></h1>
-            </li>
-        </ul>
-        <div class="top-bar-section">
-            <ul class="right">
-                <li><a target="_blank" href="http://book.cakephp.org/3.0/">Documentation</a></li>
-                <li><a target="_blank" href="http://api.cakephp.org/3.0/">API</a></li>
+    <nav class="navbar navbar-inverse navbar-static-top">
+        <div class="container">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#">SBU Community Engagement DB</a>
+            </div>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="#">Sign in</a></li>
+                <li><a href="#">Register</a></li>
             </ul>
         </div>
     </nav>
-    <?= $this->Flash->render() ?>
-    <div class="container clearfix">
+
+    <div class="container">
+        <?= $this->Flash->render() ?>
+        <div class="page-header">
+            <h1><?= $this->fetch('title') ?></h1>
+        </div>
         <?= $this->fetch('content') ?>
     </div>
-    <footer>
-    </footer>
+
 </body>
 </html>

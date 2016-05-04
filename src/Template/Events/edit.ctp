@@ -1,25 +1,9 @@
 <nav class="large-3 medium-4 columns" id="actions-sidebar">
-    <ul class="side-nav">
-        <li class="heading"><?= __('Actions') ?></li>
-        <li><?= $this->Form->postLink(
-                __('Delete'),
-                ['action' => 'delete', $event->id],
-                ['confirm' => __('Are you sure you want to delete # {0}?', $event->id)]
-            )
-        ?></li>
-        <li><?= $this->Html->link(__('List Events'), ['action' => 'index']) ?></li>
-        <li><?= $this->Html->link(__('List Projects'), ['controller' => 'Projects', 'action' => 'index']) ?></li>
-        <li><?= $this->Html->link(__('New Project'), ['controller' => 'Projects', 'action' => 'add']) ?></li>
-        <li><?= $this->Html->link(__('List Photos'), ['controller' => 'Photos', 'action' => 'index']) ?></li>
-        <li><?= $this->Html->link(__('New Photo'), ['controller' => 'Photos', 'action' => 'add']) ?></li>
-    </ul>
 </nav>
-<div class="events form large-9 medium-8 columns content">
+<div class="">
     <?= $this->Form->create($event) ?>
     <fieldset>
-        <legend><?= __('Edit Event') ?></legend>
         <?php
-            echo $this->Form->input('project_id', ['options' => $projects]);
             echo $this->Form->input('start_date');
             echo $this->Form->input('end_date');
             echo $this->Form->input('venue');
@@ -29,6 +13,36 @@
             echo $this->Form->input('description');
         ?>
     </fieldset>
-    <?= $this->Form->button(__('Submit')) ?>
+    <?= $this->Form->button(__('Save')) ?>
     <?= $this->Form->end() ?>
+    <?= $this->Form->postLink(
+                __('Delete'),
+                ['action' => 'delete', $event->id],
+                ['confirm' => __('Are you sure you want to delete # {0}?', $event->id), 'class' => 'btn btn-default']
+            )
+        ?>
+
+</div>
+<hr />
+
+<div class="related">
+    <h2><?= __('Photos') ?><?= $this->Html->link(__('Edit Photos'), ['controller' => 'Photos', 'action' => 'index'], ['class' => 'btn btn-default pull-right']) ?></h2>
+    <?php if (!empty($event->photos)): ?>
+    <div class="row">
+        <?php foreach ($event->photos as $photos): ?>
+        <div class="col-sm-6 col-md-3">
+            <div class="thumbnail">
+              <?= $this->Html->image(h($photos->file), ['alt' => 'CakePHP']); ?>
+              <div class="caption">
+                <div class="actions">
+                    <?= $this->Html->link(__('View'), ['controller' => 'Photos', 'action' => 'view', $photos->id]) ?>
+                    <?= $this->Html->link(__('Edit'), ['controller' => 'Photos', 'action' => 'edit', $photos->id]) ?>
+                    <?= $this->Form->postLink(__('Delete'), ['controller' => 'Photos', 'action' => 'delete', $photos->id], ['confirm' => __('Are you sure you want to delete # {0}?', $photos->id)]) ?>
+                </div>
+              </div>
+            </div>
+        </div>
+        <?php endforeach; ?>
+    </div>
+    <?php endif; ?>
 </div>

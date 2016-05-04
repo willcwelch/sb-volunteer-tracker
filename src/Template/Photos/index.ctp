@@ -8,7 +8,7 @@
 </nav>
 <div class="photos index large-9 medium-8 columns content">
     <h3><?= __('Photos') ?></h3>
-    <table cellpadding="0" cellspacing="0">
+    <table class="table" cellpadding="0" cellspacing="0">
         <thead>
             <tr>
                 <th><?= $this->Paginator->sort('id') ?></th>

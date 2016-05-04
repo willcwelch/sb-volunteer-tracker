@@ -2,6 +2,8 @@
 
 A web app for the Stony Brook University community to track volunteer data for projects of all sizes and increase awareness of service work.
 
+[View project on GitHub](https://github.com/willcwelch/sb-volunteer-tracker)
+
 ## Overview
 
 Stony Brook University currently has no central way to track volunteer hours performed by university departments. This information is important because it is collected by the State University of New York and shows how the university is serving its community.
