@@ -12,7 +12,7 @@ CREATE TABLE organizations (
     name VARCHAR(70) NOT NULL,
     description TEXT,
     status VARCHAR(8) NOT NULL,
-    UNIQUE KEY (name),
+    UNIQUE KEY (name)
 );
 
 CREATE TABLE projects (
